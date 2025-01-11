@@ -38,6 +38,7 @@ nav {
     display: flex;
     justify-content: space-around;
     background-color: var(--secondary-color);
+    padding: 10px 20px;
 }
 
 nav a {
@@ -88,16 +89,20 @@ main {
     width: 90%;
 }
 
-.card h2, .utah h2 {
+.card h2 {
     color: #8368aa;
 }
 
 .card2 h2 {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #8368aa;
-    margin-bottom: 10px;
-    text-align: center; /* Centers the heading */
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    margin-bottom: 20px;
+    padding: 10px 20px; 
+    text-align: center; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card2 .card-text {
@@ -111,14 +116,28 @@ main {
     margin-bottom: 15px; 
 }
 
+.card2 p {
+    text-decoration: underline;
+}
+
 ul {
     list-style: none; 
     padding: 0; 
-    margin: 0; 
+    margin-top: 30px;
     display: flex; 
     flex-direction: column; 
-    gap: 15px; 
+    gap: 10px; 
     font-size: 1rem;
+    background-color: #ddd6e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px; 
+    
+}
+
+ul a {
+    text-decoration: none;
+    color: var(--text-color)
 }
 
 .card img {
