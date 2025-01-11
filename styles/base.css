@@ -1,7 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
 
 :root {
     --primary-color: #ddd6e5; /* Soft lavender background */
@@ -53,7 +53,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration:underline;
+    text-decoration:blink;
     background-color: #ddd6e5;
     color: #333;
     border-radius: 5px;
@@ -69,7 +69,7 @@ main {
  /* card sections */
 
 .card, .card2 {
-    background-color: #f5f5f8;
+    background-color: var(--accent1-color);
     border: 1px solid #ddd6e5;
     border-radius: 8px;
     box-shadow: 0 8px 10px rgba(6, 6, 6, 0.1);
@@ -90,7 +90,13 @@ main {
 }
 
 .card h2 {
-    color: #8368aa;
+    display: inline-block;
+    color: var(--secondary-color);
+    padding: 5px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #8368aa;
+    margin-bottom: 10px;
 }
 
 .card2 h2 {
@@ -116,29 +122,30 @@ main {
     margin-bottom: 15px; 
 }
 
-.card2 p {
-    text-decoration: underline;
-}
-
 ul {
     list-style: none; 
-    padding: 0; 
-    margin-top: 30px;
+    padding: 0;
+    margin-left: 20px; 
+    margin-top: 40px;
     display: flex; 
     flex-direction: column; 
     gap: 10px; 
-    font-size: 1rem;
-    background-color: #ddd6e5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px; 
-    
+    font-size: 1rem; 
 }
 
 ul a {
     text-decoration: none;
     color: var(--text-color)
 }
+
+ul a:hover {
+    text-decoration:underline;
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+    border-radius: 5px;
+    padding: 5px
+}
+
 
 .card img {
     float: right;
