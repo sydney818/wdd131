@@ -1,40 +1,45 @@
 
 
+:root {
+    --primary-color: #ddd6e5; /* Soft lavender background */
+    --secondary-color: #8368aa; /* Purple accent */
+    --accent1-color: #f5f5f8; /* Light off-white */
+    --text-color: #333; /* General text color */
+    --heading-font: 'Merriweather', serif; /* For headings */
+    --text-font: 'Roboto', sans-serif; /* For body text */
+}
+
+
 
 body {
-    font-family: acme, Arial, sans-serif;
-    background-color: #ddd6e5;
-    color: #333;
-    line-height: 1.6;
-     
+    font-family: var(--text-font);
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 header {
-    background-color: #8368aa; 
-    color: white;
+    color: var(--secondary-color);
     text-align: center;
-    padding: 40px 20px; 
-    border-bottom: 3px solid #ddd6e5; 
+    padding: 10px 20px;
 }
 
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-top: 0;
 }
+
+/* Nav Section */
+
 nav {
     display: flex;
-    justify-content: center; /* Centers the nav items */
-    gap: 25px; /* Space between nav links */
-    background-color: #8368aa;
-    padding: 18px 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for effect */
-    margin-bottom: 25px;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
 }
 
 nav a {
-    color: #f5f5f8;
+    color: var(--accent1-color);
+    font-family: var(--heading-font);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.3rem;
@@ -44,43 +49,40 @@ nav a {
 }
 
 nav a:hover {
+    text-decoration:underline;
     background-color: #ddd6e5;
     color: #333;
     border-radius: 5px;
 }
 
 main {
-    display: flex; /* Flex container to align cards horizontally */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     padding: 20px;
-    gap: 20px;
-    flex-wrap: wrap; /* Allows the cards to wrap on smaller screens */
+
 }
 
-.card {
+ /* card sections */
+
+.card, .card2 {
     background-color: #f5f5f8;
     border: 1px solid #ddd6e5;
     border-radius: 8px;
-    padding: 20px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 48%; 
-    min-width: 300px; 
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
+    box-shadow: 0 8px 10px rgba(6, 6, 6, 0.1);
+    margin: 7px;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out; 
 }
 
-.card2 {
-    background-color: #f5f5f8;
-    border: 1px solid #ddd6e5;
-    border-radius: 10px;
-    padding: 20px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 48%; 
-    min-width: 300px; 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: transform 0.3s ease-in-out; 
+
+/* card movment */
+.card:hover, .card2:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    width: 90%;
 }
 
 .card h2, .utah h2 {
@@ -100,10 +102,10 @@ main {
     line-height: 1.6;
     color: #333;
     padding: 15px;
-    background-color: #ffffff; /* Light background to separate text */
+    background-color: #ddd6e5;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to make text pop */
-    margin-bottom: 15px; /* Spacing between text section and image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px; 
 }
 
 ul {
@@ -116,49 +118,42 @@ ul {
     font-size: 1rem;
 }
 
-.card img, .utah img {
-    max-width: 100%;
-    border-radius: 8px; /* Smoothes out the edges of the images */
-    height: auto;
+.card img {
+    float: right;
+    margin: 25px;
 }
 
 .card-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
-.about-me {
-    display: flex;
-    flex-direction: row-reverse; /* Image on the right */
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.about-me .card-img {
-    flex: 0 0 auto;
-    max-width: 200px; /* Sets a max width for the image to avoid it becoming too large */
-}
-
-.utah {
-    display: flex;
-    flex-direction: row; /* Image on the left */
-    align-items: flex-start;
-    gap: 20px;
+.card-img img {
+    max-width: 100%;
+    height: auto;
 }
 
 .utah .card-img {
-    flex: 0 0 auto;
-    max-width: 200px; /* Sets a max width for the image */
+    float: left;
+    margin: 5px;
 }
 
+
+/* footer section */
 footer {
-    margin-top: 20px;
-    height: 60px;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9rem;
     text-align: center;
     position: relative;
-    background-color: #8368aa;
-    padding: 10px;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--accent1-color);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
 }
