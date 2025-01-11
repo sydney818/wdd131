@@ -1,47 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals by Sydney Anderson. Learn about dynamic web development and explore my projects, resources, and goals.">
+    <meta name="description"
+        content="WDD 131 - Dynamic Web Fundamentals by Sydney Anderson. Learn about dynamic web development and explore my projects, resources, and goals.">
     <meta name="author" content="Sydney Anderson">
     <title>WDD 131 - Dynamic Web Fundamentals - Sydney Anderson</title>
-    <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
 </head>
+
 <body>
     <header>
-        <h1>WDD 131 - Dynamic Web Fundamentals</h1>
-        <nav>
-            <ul>
-                <li><a href="https://www.linkedin.com/in/sydney-anderson-2892a32b5/" target="_blank">LinkedIn</a></li>
-                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
-                <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng" target="_blank" title="Read 2 Nephi 31:20">Favorite Scripture 2 Nephi 31:20</a></li>
-                <li><a href="#" target="_blank">Final Project</a></li>
-            </ul>
+        <h1>WDD 131 - Dynamic Web Fundamentals - Sydney Anderson</h1>
+        <nav class="navigation">
+            <a href="https://www.linkedin.com/in/sydney-anderson-2892a32b5/" target="_blank">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng" target="_blank"
+                title="Read 2 Nephi 31:20">Favorite Scripture</a>
+            <a href="#" target="_blank">Final Project</a>
         </nav>
     </header>
+
     <main>
         <section class="card">
-            <h2>Section Title</h2>
-            <img src="images/optimized-image1.jpg"alt="Image of me">
-            <p>Bio</p>
+            <div class="about-me">
+                <div class="card-img">
+                    <img src="images/family.jpg" alt="Image of me" width="200">
+                </div>
+                <div class="card-text">
+                    <h2>About Me</h2>
+                    <p>
+                        Hi, I'm Sydney! I'm married to my wonderful husband of 10 years, and we are blessed with four
+                        beautiful daughters ranging from 12 months to 8 years old. Our family is filled with love,
+                        laughter, and a whole lot of energy! As an animal lover, our home is never short on pets. We
+                        share our space with three dogs, two horses, and a bunch of chickens, each bringing their own
+                        joy to our lives.
+                    </p>
+                    <p>
+                        I absolutely love going for walks, spending quality time with my kids, and making memories with
+                        my family. One of my biggest dreams has always been to own a horse, and I'm excited to say that
+                        I'm currently learning everything I can about horses and riding. It's been a rewarding journey,
+                        and I can't wait to see where it takes me!
+                    </p>
+                </div>
+            </div>
+
+            <div class="utah">
+                <div class="card-img">
+                    <img src="images/utah.jpg" alt="Utah Landscape" width="200">
+                </div>
+                <div class="card-text">
+                    <h2>Utah</h2>
+                    <p>
+                        Utah is known for its stunning national parks, diverse landscapes, and rich history. Whether
+                        you're into outdoor adventures like hiking, skiing, or rafting, or exploring the state's
+                        fascinating history and culture, Utah has something for everyone.
+                    </p>
+                </div>
+            </div>
         </section>
-        <section class="card">
-            <h2>Section Title 2</h2>
-            <img src="images/optimized-image2.jpg" alt="Description of Image 2">
-            <p>Content for section 2. Provide further details or descriptions of another project or resource.</p>
+
+        <section class="card2">
+            <h2>Web Development Resources</h2>
+            <p>Here are some valuable resources to references</p>
+            <ul>
+                <li><a href="https://www.codecademy.com/resources/cheatsheets/language/html-css" target="_blank">HTML
+                        &amp;
+                        CSS Help Sheet</a></li>
+                <li><a href="https://htmlcheatsheet.com/js/" target="_blank">JavaScript Help Sheet</a></li>
+                <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+                <li><a href="https://coolors.co/" target="_blank">Color Generator</a></li>
+            </ul>
         </section>
-        
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> Sydney Anderson, Utah, USA</p>
+        <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
         <p id="lastModified"></p>
     </footer>
-    <!-- Java script file linked to HTML file -->
-    <script src="getdates.js"></script>
 
+    <!-- JavaScript file linked to HTML file -->
+    <script src="scripts/getdates.js" defer></script>
 </body>
+
 </html>

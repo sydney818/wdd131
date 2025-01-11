@@ -1,24 +1,164 @@
+
+
+
 body {
-    font-family: 'Roboto',sans-serif;
+    font-family: acme, Arial, sans-serif;
+    background-color: #ddd6e5;
     color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2 {
-    font-family: 'Open Sans', sans-serif;
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-    color: #333
+    line-height: 1.6;
+     
 }
 
 header {
-    background-color: #0066cc;
+    background-color: #8368aa; 
     color: white;
-    padding: 1rem;
     text-align: center;
+    padding: 40px 20px; 
+    border-bottom: 3px solid #ddd6e5; 
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+nav {
+    display: flex;
+    justify-content: center; /* Centers the nav items */
+    gap: 25px; /* Space between nav links */
+    background-color: #8368aa;
+    padding: 18px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for effect */
+    margin-bottom: 25px;
+}
+
+nav a {
+    color: #f5f5f8;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #ddd6e5;
+    color: #333;
+    border-radius: 5px;
+}
+
+main {
+    display: flex; /* Flex container to align cards horizontally */
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows the cards to wrap on smaller screens */
+}
+
+.card {
+    background-color: #f5f5f8;
+    border: 1px solid #ddd6e5;
+    border-radius: 8px;
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 48%; 
+    min-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+.card2 {
+    background-color: #f5f5f8;
+    border: 1px solid #ddd6e5;
+    border-radius: 10px;
+    padding: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 48%; 
+    min-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.card h2, .utah h2 {
+    color: #8368aa;
+}
+
+.card2 h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #8368aa;
+    margin-bottom: 10px;
+    text-align: center; /* Centers the heading */
+}
+
+.card2 .card-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    padding: 15px;
+    background-color: #ffffff; /* Light background to separate text */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow to make text pop */
+    margin-bottom: 15px; /* Spacing between text section and image */
+}
+
+ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    font-size: 1rem;
+}
+
+.card img, .utah img {
+    max-width: 100%;
+    border-radius: 8px; /* Smoothes out the edges of the images */
+    height: auto;
+}
+
+.card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.about-me .card-img {
+    flex: 0 0 auto;
+    max-width: 200px; /* Sets a max width for the image to avoid it becoming too large */
+}
+
+.utah {
+    display: flex;
+    flex-direction: row; /* Image on the left */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.utah .card-img {
+    flex: 0 0 auto;
+    max-width: 200px; /* Sets a max width for the image */
+}
+
+footer {
+    margin-top: 20px;
+    height: 60px;
+    text-align: center;
+    position: relative;
+    background-color: #8368aa;
+    padding: 10px;
+    color: white;
 }
