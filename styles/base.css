@@ -1,6 +1,6 @@
 
 :root {
-    --primary-color: #ddd6e5; 
+    --primary-color: #ede8f2; 
     --secondary-color: #8368aa;
     --accent1-color: #ffffff; 
     --text-color: #333; 
@@ -21,7 +21,7 @@ h1, h2, h3 {
 }
 
 header {
-    color: var(--text-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 10px 20px;
 }
