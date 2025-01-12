@@ -89,15 +89,35 @@ main {
     width: 90%;
 }
 
-.card h2 {
+.card .about-me h2 {
     display: inline-block;
     color: var(--text-color);
     padding: 5px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 2px solid var(--text-color);
+    /* border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+    /* border: 2px solid var(--text-color); */
     margin-bottom: 10px;
 }
+
+.card .utah h2 {
+    display: inline-block;
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: -1%;
+    position: relative;
+}
+
+.card .utah h2::after {
+    content: '';
+    position: absolute;
+    left: 0; /* Start underline from the left of the text */
+    bottom: 0; /* Position underline below the text */
+    width: 120%; /* Make the underline longer (adjust percentage as needed) */
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--text-color); /* Use the same color as the text */
+}
+
+
 
 .card2 h2 {
     font-size: 1.8rem;
@@ -185,4 +205,16 @@ footer {
 footer p {
     margin: 5px 0;
     font-size: 0.9rem;
+}
+
+.card-img figure {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+
+.card-img figcaption {
+    font-size: 0.9rem; 
+    color: #555;      
+    margin-top: 4px;  
 }
