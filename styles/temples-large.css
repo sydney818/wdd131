@@ -1,8 +1,5 @@
 /* Large Screen*/
 @media (min-width: 768px) {
-    body {
-        font-size: 1.1rem;
-    }
 
     header {
         display: flex;
