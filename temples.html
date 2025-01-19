@@ -7,64 +7,67 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles/temples.css"> 
-        <link rel="stylesheet" href="styles/temples-large.css"> 
+        <link rel="stylesheet" href="styles/temples.css">
+        <link rel="stylesheet" href="styles/temples-large.css">
         <script src="scripts/temples.js" defer></script>
     </head>
-    
-<body>
-    <h1>Temples</h1>
-    <main>
+    <body>
+        <header>
+            <h1>Temples</h1>
+        <a id="menu" href="#"></a>
         <nav>
-            <a href="#Home">Home</a>
-            <a href="#Old">Old</a>
-            <a href="#New">New</a>
-            <a href="#Large">Large</a>
-            <a href="#Small">Small</a>
+            <ul id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
-        <h2>Templ Gallery</h2>
-        <figure>
-            <img src="images/bountiful-temple.jpg" alt="Bountiful Temple">
-            <figcaption>Temple 1</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple2.jpg" alt="Temple 2">
-            <figcaption>Temple 2</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple3.jpg" alt="Temple 3">
-            <figcaption>Temple 3</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple4.jpg" alt="Temple 4">
-            <figcaption>Temple 4</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple5.jpg" alt="Temple 5">
-            <figcaption>Temple 5</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple6.jpg" alt="Temple 6">
-            <figcaption>Temple 6</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple7.jpg" alt="Temple 7">
-            <figcaption>Temple 7</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple8.jpg" alt="Temple 8">
-            <figcaption>Temple 8</figcaption>
-        </figure>
-        <figure>
-            <img src="images/temple9.jpg" alt="Temple 9">
-            <figcaption>Temple 9</figcaption>
-        </figure>
-
-    </main>
-    <footer>
-        <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
-        <p id="lastModified"></p>
-    </footer>
-    
-</body>
+        </header>
+        <main>
+            <h2 class="temple-gallery">Temple Gallery</h2>
+            <div class="grid-container">
+                <figure>
+                    <img src="images/bountiful-temple.jpg" alt="Bountiful Temple">
+                    <figcaption>Bountiful Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/salt-lake-temple.jpg" alt="Salt Lake Temple">
+                    <figcaption>Salt Lake Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Montana-Temple.jpg" alt="Billings Montana Temple">
+                    <figcaption>Billings Montana Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/denver-temple.jpg" alt="Denver Temple">
+                    <figcaption>Denver Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/draper-temple.jpg" alt="Draper Temple">
+                    <figcaption>Draper Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/arizona-temple.jpg" alt="Arizona Temple">
+                    <figcaption>Arizona Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/st-george-temple.jpg" alt="St. George Temple">
+                    <figcaption>St. George Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/payson-temple.jpg" alt="Payson Temple">
+                    <figcaption>Payson Temple</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/brigham-city-temple.jpg" alt="Brigham City Temple">
+                    <figcaption>Brigham City Temple</figcaption>
+                </figure>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
+            <p id="lastModified"></p>
+        </footer>
+    </body>
 </html>

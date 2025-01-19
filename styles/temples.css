@@ -1,53 +1,100 @@
 
-
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2 {
-    font-family: 'Open Sans', sans-serif;
-    color: #343a40;
+body {
+    font-family: "Sansita", sans-serif;
 }
+
 
 header {
-    text-align: center;
-    padding: 1rem 0;
+    display: grid;
+    grid-gap: 1rem;
+    background-color: #e4e2e2;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px #333;
+}
+
+header, main {
+    margin: 0 auto;
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    padding: 1rem;
+    background-color: #36454f;
+}
+
+
+nav ul {
+    list-style: none;
+    display: none; 
+    flex-direction: column; 
+    width: 100%;
 }
 
 nav a {
-    color: white;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    font-size: larger;
 }
 
 nav a:hover {
-    background-color: #555;
-    color: #fff;
+    background-color: #fff;
+    color: #555;
+    font-weight: bold;
+
+}
+
+/* Hamburger button */
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .5rem .75rem;
+    background-color: #eee;
+    color: #000;
+}
+
+#menu::before {
+    content: "≡"; 
+}
+
+
+nav.show ul {
+    display: flex; 
+    flex-direction: column;
+}
+
+#menu.show::before {
+    content: "X"; 
 }
 
 main {
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
+}
+
+.temple-gallery {
+    text-align: center;
+    margin-bottom: 1rem; 
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: 1fr; 
     gap: 1rem;
 }
 
 figure {
-    border: 1px solid #ddd;
+    border: 1px solid #d7d6d6;
     padding: 0.5rem;
     text-align: center;
     background-color: #f9f9f9;
@@ -64,7 +111,26 @@ figcaption {
     color: #555;
 }
 
+
 footer {
     text-align: center;
     padding: 1rem;
+    background-color: #e4e2e2;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #333;
 }
+
+/* so it will diplay on small screens only */
+@media only screen and (min-width: 40em) {
+    nav ul {
+        display: flex; 
+        flex-direction: row; 
+    } 
+
+    #menu {
+        display: none; 
+    }
+} 
+
+
