@@ -75,7 +75,7 @@
               <h2 class="weather-header">
                   Weather 
                   <span class="weather-icon" aria-hidden="true">⛅</span>
-                  <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon-mobile">
+                  <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon-mobile" width="20" height="20">
               </h2>
               <table>
                 <tbody>
@@ -85,15 +85,19 @@
                   </tr>
                   <tr>
                     <th>Temperature:</th>
-                    <td>Placeholder</td>
+                    <td id="temperature">42</td>
                   </tr>
                   <tr>
                     <th>Humidity:</th>
-                    <td>Placeholder</td>
+                    <td>67%</td>
                   </tr>
                   <tr>
-                    <th>Wind Speed:</th>
-                    <td>Placeholder</td>
+                    <th>Wind:</th>
+                    <td id="windSpeed">10</td>
+                  </tr>
+                  <tr>
+                    <th>Wind Chill:</th>
+                    <td id="windChill"></td> 
                   </tr>
                 </tbody>
               </table>
