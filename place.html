@@ -5,18 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
     content="WDD 131 - Dynamic Web Fundamentals by Sydney Anderson.">
-<meta name="author" content="Sydney Anderson">
+    <meta name="author" content="Sydney Anderson">
     <title>Document</title>
-    <!-- Preconnect links for Google Fonts (remember for future projects)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- Google styles this should be after google font linkes (I think) -->
     <link rel="stylesheet" href="styles/place.css">
-    <!-- Java script link -->
     <script src="scripts/place.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Utah</h1>
+    </header>
+    <main>
+        <section class="hero">
+          <picture>
+            <!-- Small image -->
+            <source srcset="images/place-small.webp" media="(max-width: 600px)">
+            <!-- Medium image -->
+            <source srcset="images/place-medium.webp" media="(max-width: 1024px)">
+            <!-- Large image -->
+            <img src="images/place-large2.webp" alt="Beautiful Landscape of Utah">
+          </picture>
+          <div class="hero-content">
+
+            <!-- Data Section -->
+            <div class="data">
+              <h2 class="data-header">Data</h2>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Area:</th>
+                    <td>219,890 km2</td>
+                  </tr>
+                  <tr>
+                    <th>Population:</th>
+                    <td>3.418 million</td>
+                  </tr>
+                  <tr>
+                    <th>Capital:</th>
+                    <td>Salt Lake City</td>
+                  </tr>
+                  <tr>
+                    <th>Languages:</th>
+                    <td>English</td>
+                  </tr>
+                  <tr>
+                    <th>Currency:</th>
+                    <td> US dollar ($USD)</td>
+                  </tr>
+                  <tr>
+                    <th>Time Zone:</th>
+                    <td>Mountain Standard Time (MST)</td>
+                  </tr>
+                  <tr>
+                    <th>Calling Code:</th>
+                    <td>801, 385, and 435</td>
+                  </tr>
+                  <tr>
+                    <th>Internet TLD:</th>
+                    <td>.utah.gov.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Weather Section -->
+            <div class="weather">
+              <h2 class="weather-header">
+                  Weather 
+                  <span class="weather-icon" aria-hidden="true">⛅</span>
+                  <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon-mobile">
+              </h2>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Current Weather:</th>
+                    <td>Placeholder</td>
+                  </tr>
+                  <tr>
+                    <th>Temperature:</th>
+                    <td>Placeholder</td>
+                  </tr>
+                  <tr>
+                    <th>Humidity:</th>
+                    <td>Placeholder</td>
+                  </tr>
+                  <tr>
+                    <th>Wind Speed:</th>
+                    <td>Placeholder</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
