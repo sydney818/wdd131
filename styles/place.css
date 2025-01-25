@@ -1,14 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 :root {
     --primary-color: #f0f0f0;
     --secondary-color: #222;
     --font-size-base: 16px;
     --padding-base: 10px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -22,7 +24,7 @@ h1 {
     padding: 10px;
     font-size: 50px;
     border-bottom: solid;
-    border-color: #f0f0f0;
+    border-color: var(--primary-color);
     border-width: thick;
 }
 
