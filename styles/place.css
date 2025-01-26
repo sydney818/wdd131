@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--primary-color);
 }
 
@@ -77,6 +77,7 @@ h1::after {
 /* Default: Display emoticon for larger screens */
 .weather-icon {
     font-size: 2rem;
+    /* Adjust size as necessary */
 }
 
 /* Hide the SVG icon on larger screens */
@@ -90,6 +91,7 @@ h1::after {
     padding: 10px;   
     color: black;
     border-radius: 10px;
+    /* box-shadow: 0 4px 8px #0B2027; */
 }
 
 .data {
