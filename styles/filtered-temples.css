@@ -104,12 +104,14 @@ main {
     align-items: center; /* Center align the items (text) */
 }
 
+
 .temple-card img {
     order: 2; /* Place temple image second */
-    max-width: 100%;
+    width: 100%;
     height: auto;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
+    
 }
 
 .temple-card h2 {
