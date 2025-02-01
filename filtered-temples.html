@@ -9,64 +9,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" as="style">
-        <link rel="stylesheet" href="styles/temples.css">
         <link rel="stylesheet" href="styles/filtered-temples.css">
         <script src="scripts/filtered-temples.js" defer></script>
     </head>
     <body>
         <header>
             <h1>Temples</h1>
-            <a id="menu" href="#"></a>
+            <button id="menu"></button> 
             <nav>
-                <ul id="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul>
+                    <li><a href="#" id="home">Home</a></li>
+                    <li><a href="#" id="old">Old</a></li>
+                    <li><a href="#" id="new">New</a></li>
+                    <li><a href="#" id="large">Large</a></li>
+                    <li><a href="#" id="small">Small</a></li>
                 </ul>
-        </nav>
+            </nav>
         </header>
         <main>
-            <h2 class="temple-gallery">Temple Gallery</h2>
-            <div class="grid-container">
-                <figure>
-                    <img src="images/bountiful-templefixed.jpg" alt="Bountiful Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Bountiful Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/salt-lake-templefixed.jpg" alt="Salt Lake Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Salt Lake Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/Montana-Templefixed.jpg" alt="Billings Montana Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Billings Montana Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/denver-templefixed.jpg" alt="Denver Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Denver Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/draper-templefixed.jpg" alt="Draper Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Draper Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/arizona-templefixed.jpg" alt="Arizona Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Arizona Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/st-george-templefixed.jpg" alt="St. George Temple" loading="lazy" width="400" height="146">
-                    <figcaption>St. George Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/payson-templefixed.jpg" alt="Payson Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Payson Temple</figcaption>
-                </figure>
-                <figure>
-                    <img src="images/brigham-city-templefixed.jpg" alt="Brigham City Temple" loading="lazy" width="400" height="146">
-                    <figcaption>Brigham City Temple</figcaption>
-                </figure>
-
-            </div>
+            <h2 class="temple-gallery">Home</h2>
+            <div class="container" id="temple-container"></div>
         </main>
         <footer>
             <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>

@@ -60,6 +60,7 @@ nav a:hover {
     padding: .5rem .75rem;
     background-color: #eee;
     color: #000;
+    margin-left: auto;
 }
 
 #menu::before {
@@ -87,30 +88,37 @@ main {
     margin-bottom: 1rem; 
 }
 
-.grid-container {
+.container {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /*1 column for smaller screens*/
     gap: 1rem;
 }
 
-figure {
+.temple-card {
     border: 1px solid #d7d6d6;
     padding: 0.5rem;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #f4f3f3;
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center align the items (text) */
 }
 
-figure img {
+.temple-card img {
+    order: 2; /* Place temple image second */
     max-width: 100%;
     height: auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
 }
 
-figcaption {
-    margin-top: 0.5rem;
-    font-style: italic;
-    color: #555;
+.temple-card h2 {
+ margin-bottom: 1rem;
 }
 
+.temple-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
 footer {
     text-align: center;
@@ -136,7 +144,6 @@ footer {
 
 /* Large Screen*/
 @media (min-width: 768px) {
-
     header {
         display: flex;
         align-items: center;
@@ -149,7 +156,7 @@ footer {
     }
 
     main {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         padding: 2rem;
     }
@@ -158,20 +165,20 @@ footer {
         font-size: 1.5rem;
     }
 
-    .grid-container {
+    .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); 
         gap: 1.5rem;
     }
 
-    figure {
+    .temple-card {
         border: 1px solid #ddd;
         padding: 1rem;
         text-align: center;
-        background-color: #f9f9f9;
+        background-color: #f4f3f3;
     }
 
-    figure:hover {
+    .temple-card:hover {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
