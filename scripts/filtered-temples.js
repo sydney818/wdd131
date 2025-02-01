@@ -68,32 +68,32 @@ const temples = [
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
 
-  {
-      templeName: "Bountiful Utah",
-      location: "Mexico City, Mexico",
-      dedicated: "1983, December, 2",
-      area: 104000,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-1059079-wallpaper.jpg"
-    },
+  // {
+  //     templeName: "Bountiful Utah",
+  //     location: "Mexico City, Mexico",
+  //     dedicated: "1983, December, 2",
+  //     area: 104000,
+  //     imageUrl:
+  //     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-1059079-wallpaper.jpg"
+  //   },
 
-    {
-      templeName: "Belém Brazil",
-      location: "Mexico City, Mexico",
-      dedicated: "1983, December, 2",
-      area: 28675,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/belem-brazil/400x250/belem_brazil_temple_exterior2.jpg"
-    },
+  //   {
+  //     templeName: "Belém Brazil",
+  //     location: "Mexico City, Mexico",
+  //     dedicated: "1983, December, 2",
+  //     area: 28675,
+  //     imageUrl:
+  //     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/belem-brazil/400x250/belem_brazil_temple_exterior2.jpg"
+  //   },
 
-    {
-      templeName: "Salt Lake Utah",
-      location: "Salt Lake City, Utah",
-      dedicated: "1983, April, 6",
-      area: 253000,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
-    },
+  //   {
+  //     templeName: "Salt Lake Utah",
+  //     location: "Salt Lake City, Utah",
+  //     dedicated: "1983, April, 6",
+  //     area: 253000,
+  //     imageUrl:
+  //     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
+  //   },
 
 ];
 
