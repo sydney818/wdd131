@@ -67,94 +67,92 @@ const temples = [
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
-
   {
-      templeName: "Bountiful Utah",
-      location: "Mexico City, Mexico",
-      dedicated: "1983, December, 2",
-      area: 104000,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-1059079-wallpaper.jpg"
-    },
-
-    {
-      templeName: "Belém Brazil",
-      location: "Mexico City, Mexico",
-      dedicated: "1983, December, 2",
-      area: 28675,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/belem-brazil/400x250/belem_brazil_temple_exterior2.jpg"
-    },
-
-    {
-      templeName: "Salt Lake Utah",
-      location: "Salt Lake City, Utah",
-      dedicated: "1983, April, 6",
-      area: 253000,
-      imageUrl:
-      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
-    },
-
+    templeName: "Bountiful Utah",
+    location: "Mexico City, Mexico",
+    dedicated: "1983, December, 2",
+    area: 104000,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-1059079-wallpaper.jpg"
+  },
+  {
+    templeName: "Belém Brazil",
+    location: "Mexico City, Mexico",
+    dedicated: "1983, December, 2",
+    area: 28675,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/belem-brazil/400x250/belem_brazil_temple_exterior2.jpg"
+  },
+  {
+    templeName: "Salt Lake Utah",
+    location: "Salt Lake City, Utah",
+    dedicated: "1983, April, 6",
+    area: 253000,
+    imageUrl:
+    "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/2018/400x250/slctemple7.jpg"
+  },
 ];
 
-function displayTemples(filteredTemples) {
-  const container = document.getElementById("temple-container");
-  container.innerHTML = ""; // Clear existing content
-  console.log("Filtered Temples:", filteredTemples); // Debugging log
+function createTempleCard(filteredTemples) {
+  const grid = document.querySelector(".temple-container");
+  grid.innerHTML = "";
 
-  filteredTemples.forEach((temple) => {
-    const card = document.createElement("div");
-    card.classList.add("temple-card");
+  filteredTemples.forEach(temple => {
+    let card = document.createElement("section");
+    card.classList.add("temple-card"); // "temple-card" class
 
-    const name = document.createElement("h2");
+    let name = document.createElement("h3");
+    let location = document.createElement("p");
+    let dedication = document.createElement("p");
+    let area = document.createElement("p");
+    let img = document.createElement("img");
+
     name.textContent = temple.templeName;
+    location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+    dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+    area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
+    img.setAttribute("src", temple.imageUrl);
+    img.setAttribute("alt", `${temple.templeName} Temple`);
+    img.setAttribute("loading", "lazy");
 
-    const location = document.createElement("p");
-    location.textContent = `Location: ${temple.location}`;
-
-    const dedication = document.createElement("p");
-    dedication.textContent = `Dedicated: ${temple.dedicated}`;
-
-    const area = document.createElement("p");
-    area.textContent = `Area: ${temple.area.toLocaleString()} sq ft`;
-
-    const image = document.createElement("img");
-    image.src = temple.imageUrl;
-    image.alt = `${temple.templeName} Temple`;
-    image.loading = "lazy";
-
-    card.appendChild(image);
     card.appendChild(name);
     card.appendChild(location);
     card.appendChild(dedication);
     card.appendChild(area);
+    card.appendChild(img);
 
-    container.appendChild(card);
+    grid.appendChild(card);
   });
 }
 
-function filterTemples(filterType) {
-  const filters = {
-    "old": (temple) => parseInt(temple.dedicated.split(",")[0]) < 1900,
-    "new": (temple) => parseInt(temple.dedicated.split(",")[0]) > 2000,
-    "large": (temple) => temple.area > 90000,
-    "small": (temple) => temple.area < 10000,
-    "home": () => true, // Show all temples
-  };
 
+const filteredTemples = temples; 
+createTempleCard(filteredTemples);
 
-  const filteredTemples = temples.filter(filters[filterType] || filters["home"]);
+document.querySelector("#home").addEventListener("click", () => {
+  createTempleCard(temples); 
+});
 
-  displayTemples(filteredTemples);
-}
+document.querySelector("#old").addEventListener("click", () => {
+  const oldTemples = temples.filter(temple => {
+    return new Date(temple.dedicated).getFullYear() < 1900;
+  });
+  createTempleCard(oldTemples);
+});
 
-// Event Listeners for Navigation
-document.addEventListener("DOMContentLoaded", () => {
-  displayTemples(temples); // Display all temples on page load
+document.querySelector("#new").addEventListener("click", () => {
+  const newTemples = temples.filter(temple => {
+    return new Date(temple.dedicated).getFullYear() > 2000;
+  });
+  createTempleCard(newTemples);
+});
 
-  document.getElementById("home").addEventListener("click", () => filterTemples("home"));
-  document.getElementById("old").addEventListener("click", () => filterTemples("old"));
-  document.getElementById("new").addEventListener("click", () => filterTemples("new"));
-  document.getElementById("large").addEventListener("click", () => filterTemples("large"));
-  document.getElementById("small").addEventListener("click", () => filterTemples("small"));
+document.querySelector("#large").addEventListener("click", () => {
+  const largeTemples = temples.filter(temple => temple.area > 90000);
+  createTempleCard(largeTemples);
+});
+
+document.querySelector("#small").addEventListener("click", () => {
+  const smallTemples = temples.filter(temple => temple.area < 10000);
+  createTempleCard(smallTemples);
 });

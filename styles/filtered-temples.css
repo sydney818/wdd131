@@ -90,7 +90,7 @@ main {
     margin-bottom: 1rem; 
 }
 
-.container {
+.temple-container {
     display: grid;
     grid-template-columns: 1fr; /*1 column for smaller screens*/
     gap: 1rem;
@@ -170,7 +170,7 @@ footer {
         font-size: 1.5rem;
     }
 
-    .container {
+    .temple-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr); 
         gap: 1.5rem;
