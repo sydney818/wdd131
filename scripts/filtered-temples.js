@@ -133,38 +133,17 @@ function displayTemples(filteredTemples) {
   });
 }
 
-// Filter Functions
 function filterTemples(filterType) {
-  let filteredTemples = [];
+  const filters = {
+    "old": (temple) => parseInt(temple.dedicated.split(",")[0]) < 1900,
+    "new": (temple) => parseInt(temple.dedicated.split(",")[0]) > 2000,
+    "large": (temple) => temple.area > 90000,
+    "small": (temple) => temple.area < 10000,
+    "home": () => true, // Show all temples
+  };
 
-  switch (filterType) {
-    case "old":
-      filteredTemples = temples.filter((temple) => {
-        const year = parseInt(temple.dedicated.split(",")[0]); // Extract year
-        return year < 1900;
-      });
-      break;
 
-    case "new":
-      filteredTemples = temples.filter((temple) => {
-        const year = parseInt(temple.dedicated.split(",")[0]);
-        return year > 2000;
-      });
-      break;
-
-    case "large":
-      filteredTemples = temples.filter((temple) => temple.area > 90000);
-      break;
-
-    case "small":
-      filteredTemples = temples.filter((temple) => temple.area < 10000);
-      break;
-
-    case "home":
-    default:
-      filteredTemples = temples; // Show all
-      break;
-  }
+  const filteredTemples = temples.filter(filters[filterType] || filters["home"]);
 
   displayTemples(filteredTemples);
 }
