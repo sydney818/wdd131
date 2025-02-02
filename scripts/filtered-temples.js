@@ -125,6 +125,12 @@ function createTempleCard(filteredTemples) {
   });
 }
 
+// Help with lazy loading test script
+const firstImage = document.querySelector(".temple-container img");  
+if (firstImage) {
+  firstImage.setAttribute("loading", "eager"); 
+}
+
 
 const filteredTemples = temples; 
 createTempleCard(filteredTemples);
