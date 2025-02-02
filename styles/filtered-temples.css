@@ -67,9 +67,9 @@ nav a:hover {
     margin-left: auto;
 }
 
-/* #menu::before {
+#menu::before {
     content: "≡"; 
-} */
+}
 
 
 nav.show ul {
@@ -185,13 +185,8 @@ footer {
         background-color: #f4f3f3;
     }
 
-  
     .temple-card:hover {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* footer {
-        text-align: center;
-        padding: 2rem;
-    } */
 }
