@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     /* padding: 0; */
@@ -8,7 +10,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+
 header {
+    /* display: grid; */
+    /* grid-gap: 1rem; */
     background-color: #e4e2e2;
     padding: 20px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -23,6 +28,7 @@ header, main {
 nav {
     background-color: #36454f;
 }
+
 
 nav ul {
     list-style: none;
@@ -44,8 +50,10 @@ nav a:hover {
     background-color: #fff;
     color: #555;
     font-weight: bold;
+
 }
 
+/* Hamburger button */
 #menu {
     display: block;
     font-size: 2rem;
@@ -60,6 +68,7 @@ nav a:hover {
 #menu::before {
     content: "≡"; 
 }
+
 
 nav.show ul {
     display: flex; 
@@ -81,36 +90,35 @@ main {
     margin-bottom: 1rem; 
 }
 
-.temple-container {
+/* .temple-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 1.5rem;
-    min-height: 500px; /* helps layout shifts */
-}
+    grid-template-columns: 1fr;
+    gap: 1rem;
+} */
 
 .temple-card {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    min-height: 350px; /* helps shifting when content loads */
-    padding: 1rem;
+    /* border: 1px solid #d7d6d6;
+    padding: 0.5rem;
     text-align: center;
-    background-color: #f4f3f3;
-    border: 1px solid #ddd;
+    background-color: #f4f3f3; */
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center align the items (text) */
+    min-height: 250px; /* Prevents shifting when content loads */
 }
 
+
 .temple-card img {
-    order: 2; 
+    order: 2; /* Place temple image second */
     width: 100%;
     height: auto;
     object-fit: cover;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    margin-top: 1rem;
-    aspect-ratio: 16 / 9; /* consistent aspect ratio */
+    margin-top: 1rem;  
 }
 
 .temple-card h2 {
-    margin-bottom: 1rem;
+ margin-bottom: 1rem;
 }
 
 .temple-card:hover {
@@ -126,7 +134,7 @@ footer {
     box-shadow: 0 0 10px #333;
 }
 
-/* Mobile-first styles */
+/* so it will diplay on small screens only */
 @media only screen and (min-width: 40em) {
     nav ul {
         display: flex; 
@@ -138,7 +146,8 @@ footer {
     }
 } 
 
-/* Large Screen */
+
+/* Large Screen*/
 @media (min-width: 768px) {
     header {
         display: flex;
@@ -168,6 +177,14 @@ footer {
     }
 
     .temple-card {
+        border: 1px solid #ddd;
         padding: 1rem;
+        text-align: center;
+        background-color: #f4f3f3;
     }
+
+    .temple-card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
 }
