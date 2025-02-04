@@ -22,6 +22,9 @@ h1, h2, h3 {
     color: rgb(142, 8, 8);
 }
 
+h1{
+    background-color: white;
+}
 
 main {
     color: black;
