@@ -1,0 +1,52 @@
+/* Color Scheme */
+body {
+    background-color: white;
+    color: #003366;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header and Navigation */
+header {
+    color: black;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    color: rgb(142, 8, 8);
+}
+
+h1 {
+    background-color: #f0f0f0;
+    padding: 2rem;
+}
+
+main {
+    color: black;
+    background-color: white;
+    padding: 1rem;
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #f0f0f0;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
