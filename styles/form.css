@@ -17,7 +17,7 @@ header {
     font-family: 'Roboto', sans-serif;
 }
  
-.review inpute[type="submit"]:hover {
+.review input[type="submit"]:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -47,6 +47,7 @@ form {
 
 .stars {
     display: flex;
+    gap: 10px;
 }
 
 .review label {
@@ -68,6 +69,7 @@ form {
     color: #555;
     width: 100%;
     max-width: 400px;
+    min-height: 44px;
 }
 
 
