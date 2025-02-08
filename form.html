@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 131 - Dynamic Web Fundamentals by Sydney Anderson, week05 Assignment creating HTML form.">
+    <meta name="author" content="Sydney Anderson">
+    <title>Product Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Product Review</h1>
+    </header>
+    <main>
+        <form method="get" action="review.html" class="review">
+            <fieldset class="product_select">
+                <label for="product">Product Name: <br>
+                    <select id="product" name="production" required>
+                        <option value="" disable selected> Select a Product &#9662;</option>
+                    </select></label>
+                </fieldset>
+            <fieldset class="stars">
+                <legend>Overall Rating:</legend>
+                <label><input type="radio" name="rating" value="1" requried>&star;</label>
+                <label><input type="radio" name="rating" value="2" requried>&star;&star;</label>
+                <label><input type="radio" name="rating" value="3" requried>&star;&star;&star;</label>
+                <label><input type="radio" name="rating" value="4" requried>&star;&star;&star;&star;</label>
+                <label><input type="radio" name="rating" value="5" requried>&star;&star;&star;&star;&star;</label>
+            </fieldset>
+
+            <fieldset>
+                <label>Date of Installation</label><br>
+                <input type="date" id="install-date" name="install_date"><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Which features did you find useful in the product? <br> (check all that apply)</legend>
+                <label><input type="checkbox" id="feature1" name="features" value="durability">Durability</label>
+                <label><input type="checkbox" id="feature1" name="features" value="durability">Ease of Use</label>
+                <label><input type="checkbox" id="feature1" name="features" value="durability">Performace</label>
+                <label><input type="checkbox" id="feature1" name="features" value="durability">Design</label>
+            </fieldset>
+
+            <fieldset>
+                <label for="review">Written Review:</label>
+                <textarea id="review" name="review" rows="4"></textarea>
+
+                <label for="name">Your Name(Optional)</label>
+                <input type="text" id="name" name="name">
+            </fieldset>
+
+            <button type="submit">Post Review</button>
+
+        </form>
+
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>
