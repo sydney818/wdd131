@@ -41,10 +41,27 @@ products.forEach(product => {
 
 
 function updateReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount') || 0;  
-    reviewCount = parseInt(reviewCount) + 1;  
-    localStorage.setItem('reviewCount', reviewCount);  
-    document.getElementById('review-counter').textContent = `Total Reviews Submitted: ${reviewCount}`;
+    let reviewCount = localStorage.getItem('reviewCount'); 
+    
+
+    if (reviewCount === null) {
+        reviewCount = 0;
+    } else {
+        reviewCount = parseInt(reviewCount); 
+    }
+
+ 
+    reviewCount++;
+
+ 
+    localStorage.setItem('reviewCount', reviewCount);
+
+    const counterElement = document.getElementById('review-counter');
+    if (counterElement) {
+        counterElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
+    } else {
+        console.error("Element with ID 'review-counter' not found.");
+    }
 }
 
 
