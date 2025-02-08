@@ -39,47 +39,46 @@ products.forEach(product => {
     selectElement.appendChild(option);
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
-    updateReviewCount();
+    updateReviewCount(); 
 });
 
 function updateReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
+    let reviewCount = localStorage.getItem('reviewCount') || 0; 
+    const reviewCountElement = document.getElementById('reviewCount'); 
 
-    if (!reviewCount) {
-        reviewCount = 0;
-    } else {
-        reviewCount = parseInt(reviewCount);
-    }
 
-    const reviewCountElement = document.getElementById('review-counter');
     if (reviewCountElement) {
         reviewCountElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
-        console.error("Error: Element with id 'review-counter' not found.");
+        console.error("Error: Element with id 'reviewCount' not found.");
     }
 }
+
 
 function incrementReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
+    let reviewCount = localStorage.getItem('reviewCount') || 0; 
+    reviewCount = parseInt(reviewCount) + 1; 
+    localStorage.setItem('reviewCount', reviewCount); 
 
-    if (!reviewCount) {
-        reviewCount = 0;
-    } else {
-        reviewCount = parseInt(reviewCount);
-    }
-
-    reviewCount += 1;
-    localStorage.setItem('reviewCount', reviewCount);
-
-    updateReviewCount();
+    updateReviewCount(); 
 }
 
-window.onload = function () {
-    updateReviewCount();
 
-    const urlParams = new URLSearchParams(window.location.search);
+window.onload = function () {
+    updateReviewCount(); 
+
+    const urlParams = new URLSearchParams(window.location.search); 
     if (urlParams.has('review')) { 
         incrementReviewCount();
     }
 };
+
+
+const form = document.querySelector(".review");
+if (form) {
+    form.addEventListener("submit", function () {
+        incrementReviewCount(); 
+    });
+}
