@@ -47,21 +47,23 @@ function incrementReviewCountOnSubmit() {
     localStorage.setItem("review-ls", numReview);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const reviewDisplay = document.querySelector(".reviews");
-
-    let numReview = Number(localStorage.getItem("review-ls"));
-
-    if (numReview > 1) {
-        reviewDisplay.textContent = `Total Reviews Submitted: ${numReview}`;
-    } else {
-        reviewDisplay.textContent = "This is your first review!";
-    }
-});
-
 let numReview = Number(localStorage.getItem("review-ls"));
 if (numReview !== 0) {
     document.querySelector("#reviewCount").textContent = `Total Reviews Submitted: ${numReview}`;
 } else {
     document.querySelector("#reviewCount").textContent = "This is your first review!";
+}
+
+if (window.location.pathname.includes("review.html")) {
+    document.addEventListener("DOMContentLoaded", function() {
+        const reviewDisplay = document.querySelector(".reviews");
+
+        let numReview = Number(localStorage.getItem("review-ls"));
+
+        if (numReview > 1) {
+            reviewDisplay.textContent = `Total Reviews Submitted: ${numReview}`;
+        } else {
+            reviewDisplay.textContent = "This is your first review!";
+        }
+    });
 }
