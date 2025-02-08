@@ -40,22 +40,58 @@ const products = [
   });
 
 
-function updateReviewCount() {
+  function updateReviewCount() {
     let reviewCount = localStorage.getItem('reviewCount');
     if (!reviewCount) {
         reviewCount = 0;
     }
-    document.getElementById('reviewCount').innerText = `Total Reviews Submitted: ${reviewCount}`
+    document.getElementById('reviewCount').innerText = `Total Reviews Submitted: ${reviewCount}`;
 }
 
-document.getElementById('reviewForm').addEventListener('suvmit', function(event) {
-    let reviewCount = localStorage.getItem('reviewCount');
-    if (!reviewCount) {
-        reviewCount = 0;
-    }
-    reviewCount = parseInt(reviewCount) +1;
-    localStorage.setItem('reviewCount', reviewCount);
-    updateReviewCount();
-})
+// Function to display all reviews from localStorage
+function displayReviews() {
+    const reviewsList = document.getElementById('reviewsList');
+    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    
+    reviewsList.innerHTML = ''; 
 
-window.onload = updateReviewCount
+    reviews.forEach(review => {
+        const li = document.createElement('li');
+        li.innerText = review;
+        reviewsList.appendChild(li);
+    });
+}
+
+
+function processFormData() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const reviewText = urlParams.get('review');
+    const name = urlParams.get('name');
+
+    if (reviewText) {
+
+        let reviewCount = localStorage.getItem('reviewCount');
+        if (!reviewCount) {
+            reviewCount = 0;
+        }
+        reviewCount = parseInt(reviewCount) + 1;
+        localStorage.setItem('reviewCount', reviewCount);
+
+
+        const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+        const fullReview = `${reviewText} ${name ? '- ' + name : ''}`; 
+        reviews.push(fullReview);
+        localStorage.setItem('reviews', JSON.stringify(reviews));
+
+
+        updateReviewCount();
+        displayReviews();
+    }
+}
+
+
+window.onload = function() {
+    updateReviewCount();
+    displayReviews();
+    processFormData();
+};
