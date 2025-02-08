@@ -39,35 +39,30 @@ products.forEach(product => {
     selectElement.appendChild(option);
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
     updateReviewCount();
 });
 
-
 function updateReviewCount() {
- 
     const reviewDisplay = document.querySelector(".reviews");
-
+    if (!reviewDisplay) {
+        console.error("Element .reviews not found on this page.");
+        return; 
+    }
 
     let reviewCount = Number(window.localStorage.getItem("reviewCount-ls")) || 0;
 
-   
     if (reviewCount !== 0) {
         reviewDisplay.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
         reviewDisplay.textContent = `No reviews submitted yet. Be the first one! 🎉`;
     }
 
-
     reviewCount++;
 
-  
     localStorage.setItem("reviewCount-ls", reviewCount);
 }
 
-
 function incrementReviewCountOnSubmit() {
-  
-    updateReviewCount();
+    updateReviewCount(); 
 }
