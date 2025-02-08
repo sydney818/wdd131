@@ -45,37 +45,51 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function updateReviewCount() {
-    // 1️⃣ Initialize the display element.
-    const reviewCountElement = document.getElementById("reviewCount");
+    const reviewCountElement = document.getElementById('reviewCount');
+    if (reviewCountElement) {
+       
+        let reviewCount = localStorage.getItem('reviewCount');
+        if (!reviewCount) {
+            reviewCount = 0;
+        } else {
+            reviewCount = parseInt(reviewCount);
+        }
 
-    // 2️⃣ Get the stored review count from localStorage (default to 0 if not found).
-    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
-
-    // 3️⃣ Check if reviewCount is greater than 0 (not first visit).
-    if (reviewCount !== 0) {
+    
         reviewCountElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
-        reviewCountElement.textContent = `No reviews submitted yet. Be the first!`;
+        console.error("Error: Element with id 'reviewCount' not found.");
     }
 }
 
-function incrementReviewCount() {
 
-    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
-    reviewCount++;
-
-
-    localStorage.setItem('reviewCount', reviewCount);
-
-    
-    updateReviewCount();
-}
-
-window.onload = function () {
-    updateReviewCount();  
-
+if (window.location.pathname.includes("review.html")) {
+ 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('review')) { 
         incrementReviewCount();
     }
-};
+}
+
+function incrementReviewCount() {
+    let reviewCount = localStorage.getItem('reviewCount');
+    if (!reviewCount) {
+        reviewCount = 0;
+    } else {
+        reviewCount = parseInt(reviewCount);
+    }
+    reviewCount += 1;
+    localStorage.setItem('reviewCount', reviewCount);
+
+    updateReviewCount();
+}
+
+
+if (window.location.pathname.includes("form.html")) {
+    const form = document.querySelector("form.review");
+    if (form) {
+        form.addEventListener("submit", function() {
+            incrementReviewCount();
+        });
+    }
+}
