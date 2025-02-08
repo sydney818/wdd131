@@ -41,14 +41,19 @@ products.forEach(product => {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    updateReviewCount(); 
+    updateReviewCount();
 });
 
 function updateReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount') || 0; 
-    const reviewCountElement = document.getElementById('reviewCount'); 
+    let reviewCount = localStorage.getItem('reviewCount');
 
+    if (!reviewCount) {
+        reviewCount = 0;
+    } else {
+        reviewCount = parseInt(reviewCount);
+    }
 
+    const reviewCountElement = document.getElementById('reviewCount');
     if (reviewCountElement) {
         reviewCountElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
@@ -56,29 +61,26 @@ function updateReviewCount() {
     }
 }
 
-
 function incrementReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount') || 0; 
-    reviewCount = parseInt(reviewCount) + 1; 
-    localStorage.setItem('reviewCount', reviewCount); 
+    let reviewCount = localStorage.getItem('reviewCount');
 
-    updateReviewCount(); 
+    if (!reviewCount) {
+        reviewCount = 0;
+    } else {
+        reviewCount = parseInt(reviewCount);
+    }
+
+    reviewCount += 1;
+    localStorage.setItem('reviewCount', reviewCount);
+
+    updateReviewCount();
 }
 
-
 window.onload = function () {
-    updateReviewCount(); 
+    updateReviewCount();
 
-    const urlParams = new URLSearchParams(window.location.search); 
+    const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('review')) { 
         incrementReviewCount();
     }
 };
-
-
-const form = document.querySelector(".review");
-if (form) {
-    form.addEventListener("submit", function () {
-        incrementReviewCount(); 
-    });
-}
