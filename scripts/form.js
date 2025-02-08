@@ -41,18 +41,15 @@ const products = [
 
 
   function updateReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
-    if (!reviewCount) {
-        reviewCount = 0;
-    }
-    document.getElementById('reviewCount').innerText = `Total Reviews Submitted: ${reviewCount}`;
+    let reviewCount = localStorage.getItem('reviewCount') || 0;
+    document.getElementById('review-counter').textContent = `Total Reviews Submitted: ${reviewCount}`;
 }
 
-// Function to display all reviews from localStorage
+// Display all reviews stored in localStorage
 function displayReviews() {
     const reviewsList = document.getElementById('reviewsList');
     const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    
+
     reviewsList.innerHTML = ''; 
 
     reviews.forEach(review => {
@@ -62,30 +59,43 @@ function displayReviews() {
     });
 }
 
-
+// Process the form data from URL 
 function processFormData() {
     const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('production');
+    const rating = urlParams.get('rating');
+    const installDate = urlParams.get('install_date');
+    const features = urlParams.get('features');
     const reviewText = urlParams.get('review');
-    const name = urlParams.get('name');
+    const name = urlParams.get('name') || "Anonymous";
 
     if (reviewText) {
+        // Display review details
+        const reviewContainer = document.getElementById("review-container");
+        reviewContainer.innerHTML = `
+            <h2>Review Submitted</h2>
+            <p><strong>Product Name:</strong> ${product}</p>
+            <p><strong>Overall Rating:</strong> ${rating}</p>
+            <p><strong>Date of Installation:</strong> ${installDate}</p>
+            <p><strong>Selected Features:</strong> ${features}</p>
+            <p><strong>Review:</strong> ${reviewText}</p>
+            <p><strong>Reviewer:</strong> ${name}</p>
+        `;
 
-        let reviewCount = localStorage.getItem('reviewCount');
-        if (!reviewCount) {
-            reviewCount = 0;
-        }
+   
+        let reviewCount = localStorage.getItem('reviewCount') || 0;
         reviewCount = parseInt(reviewCount) + 1;
         localStorage.setItem('reviewCount', reviewCount);
 
-
         const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-        const fullReview = `${reviewText} ${name ? '- ' + name : ''}`; 
-        reviews.push(fullReview);
+        reviews.push(`${reviewText} - ${name}`);
         localStorage.setItem('reviews', JSON.stringify(reviews));
 
-
+   
         updateReviewCount();
         displayReviews();
+    } else {
+        document.getElementById("review-container").innerHTML = "<p>No review data found.</p>";
     }
 }
 
