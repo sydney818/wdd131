@@ -72,12 +72,17 @@ form {
     min-height: 44px;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     width: 2em;
     height: 1rem;
  
-  }
-  
+  } */
+input[type=checkbox] {
+    margin: 4px 0 0;
+    line-height: normal;
+    width: 20px;
+    height: 20px;
+    } 
 
 
 .review input[type="text"], 
