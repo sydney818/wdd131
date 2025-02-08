@@ -39,9 +39,23 @@ const products = [
       selectElement.appendChild(option);
   });
 
-  if (window.location.pathname.includes("review.html")) {
-      let reviewCount = localStorage.getItem("reviewCount") || 0;
-      reviewCount++;
-      localStorage.setItem("reviewCount", reviewCount);
-      document.body.insertAdjacentHTML("beforeend", `<p>Reviews submitted: ${reviewCount}</p>`);
-  }
+
+function updateReviewCount() {
+    let reviewCount = localStorage.getItem('reviewCount');
+    if (!reviewCount) {
+        reviewCount = 0;
+    }
+    document.getElementById('reviewCount').innerText = `Total Reviews Submitted: ${reviewCount}`
+}
+
+document.getElementById('reviewForm').addEventListener('suvmit', function(event) {
+    let reviewCount = localStorage.getItem('reviewCount');
+    if (!reviewCount) {
+        reviewCount = 0;
+    }
+    reviewCount = parseInt(reviewCount) +1;
+    localStorage.setItem('reviewCount', reviewCount);
+    updateReviewCount();
+})
+
+window.onload = updateReviewCount
