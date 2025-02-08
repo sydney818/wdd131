@@ -17,7 +17,7 @@ header {
     font-family: 'Roboto', sans-serif;
 }
  
-.review button:hover {
+.review inpute[type="submit"]:hover {
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -88,7 +88,7 @@ form {
     margin-right: 6px;
 }
 
-.review button[type="submit"] {
+.review input[type="submit"] {
     /* background-color: red; */
     border-radius: 6px;
     border: solid 1px #999;

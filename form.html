@@ -26,29 +26,30 @@
             <fieldset class="product_select">
                 <label for="product">Product Name: <br>
                     <select id="product" name="production" required>
-                        <option value="" disable selected> Select a Product &#9662;</option>
+                        <option value=""> Select a Product &#9662;</option>
                     </select></label>
-                </fieldset>
-            <fieldset class="stars">
-                <legend>Overall Rating:</legend>
-                <label><input type="radio" name="rating" value="1" requried>&star;</label>
-                <label><input type="radio" name="rating" value="2" requried>&star;&star;</label>
-                <label><input type="radio" name="rating" value="3" requried>&star;&star;&star;</label>
-                <label><input type="radio" name="rating" value="4" requried>&star;&star;&star;&star;</label>
-                <label><input type="radio" name="rating" value="5" requried>&star;&star;&star;&star;&star;</label>
             </fieldset>
+            <fieldset class="stars" required>
+                <legend>Overall Rating:</legend>
+                <label><input type="radio" name="rating" value="rating1">&star;</label>
+                <label><input type="radio" name="rating" value="rating2">&star;&star;</label>
+                <label><input type="radio" name="rating" value="rating3">&star;&star;&star;</label>
+                <label><input type="radio" name="rating" value="rating4">&star;&star;&star;&star;</label>
+                <label><input type="radio" name="rating" value="rating5">&star;&star;&star;&star;&star;</label>
+            </fieldset>
+                
 
             <fieldset>
                 <label>Date of Installation</label><br>
-                <input type="date" id="install-date" name="install_date"><br>
+                <input type="date" id="install-date" name="install_date" required><br>
             </fieldset>
 
             <fieldset>
                 <legend>Which features did you find useful in the product? <br> (check all that apply)</legend>
                 <label><input type="checkbox" id="feature1" name="features" value="durability">Durability</label>
-                <label><input type="checkbox" id="feature1" name="features" value="durability">Ease of Use</label>
-                <label><input type="checkbox" id="feature1" name="features" value="durability">Performace</label>
-                <label><input type="checkbox" id="feature1" name="features" value="durability">Design</label>
+                <label><input type="checkbox" id="feature2" name="features" value="durability">Ease of Use</label>
+                <label><input type="checkbox" id="feature3" name="features" value="durability">Performace</label>
+                <label><input type="checkbox" id="feature4" name="features" value="durability">Design</label>
             </fieldset>
 
             <fieldset>
@@ -59,7 +60,7 @@
                 <input type="text" id="name" name="name">
             </fieldset>
 
-            <button type="submit">Post Review</button>
+            <input type="submit" value="Post Review">
 
         </form>
 
