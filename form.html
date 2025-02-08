@@ -23,7 +23,7 @@
     </header>
     <main>
         <p id="reviewCount">Total Reviews Submitted: 0</p>
-        <form method="get" action="review.html?review=true" class="review">
+        <form method="get" action="review.html" class="review" onsubmit="incrementReviewCountOnSubmit()">
             <fieldset class="product_select">
                 <label for="product">Product Name <span class="required">*</span><br>
                     <select id="product" name="production" required>
@@ -70,7 +70,7 @@
         <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
         <p id="lastModified"></p>
     </footer>
-<script src="scripts/form.js" defer></script>
+    <script src="scripts/form.js" defer></script>
 </body>
 
 </html>
