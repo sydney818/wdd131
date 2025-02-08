@@ -39,30 +39,29 @@ products.forEach(product => {
     selectElement.appendChild(option);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    updateReviewCount();
-});
+function incrementReviewCountOnSubmit() {
+    let numReview = Number(localStorage.getItem("review-ls")) || 0;
 
-function updateReviewCount() {
-    const reviewDisplay = document.querySelector(".reviews");
-    if (!reviewDisplay) {
-        console.error("Element .reviews not found on this page.");
-        return; 
-    }
+    numReview++;
 
-    let reviewCount = Number(window.localStorage.getItem("reviewCount-ls")) || 0;
-
-    if (reviewCount !== 0) {
-        reviewDisplay.textContent = `Total Reviews Submitted: ${reviewCount}`;
-    } else {
-        reviewDisplay.textContent = `No reviews submitted yet. Be the first one! 🎉`;
-    }
-
-    reviewCount++;
-
-    localStorage.setItem("reviewCount-ls", reviewCount);
+    localStorage.setItem("review-ls", numReview);
 }
 
-function incrementReviewCountOnSubmit() {
-    updateReviewCount(); 
+document.addEventListener("DOMContentLoaded", function() {
+    const reviewDisplay = document.querySelector(".reviews");
+
+    let numReview = Number(localStorage.getItem("review-ls"));
+
+    if (numReview > 1) {
+        reviewDisplay.textContent = `Total Reviews Submitted: ${numReview}`;
+    } else {
+        reviewDisplay.textContent = "This is your first review!";
+    }
+});
+
+let numReview = Number(localStorage.getItem("review-ls"));
+if (numReview !== 0) {
+    document.querySelector("#reviewCount").textContent = `Total Reviews Submitted: ${numReview}`;
+} else {
+    document.querySelector("#reviewCount").textContent = "This is your first review!";
 }
