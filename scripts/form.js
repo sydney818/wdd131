@@ -45,51 +45,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function updateReviewCount() {
-    const reviewCountElement = document.getElementById('reviewCount');
-    if (reviewCountElement) {
-       
-        let reviewCount = localStorage.getItem('reviewCount');
-        if (!reviewCount) {
-            reviewCount = 0;
-        } else {
-            reviewCount = parseInt(reviewCount);
-        }
+ 
+    const reviewCountElement = document.getElementById("reviewCount");
 
-    
+
+    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
+
+ 
+    if (reviewCount !== 0) {
         reviewCountElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
-        console.error("Error: Element with id 'reviewCount' not found.");
-    }
-}
-
-
-if (window.location.pathname.includes("review.html")) {
- 
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('review')) { 
-        incrementReviewCount();
+        reviewCountElement.textContent = `No reviews submitted yet. Be the first!`;
     }
 }
 
 function incrementReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
-    if (!reviewCount) {
-        reviewCount = 0;
-    } else {
-        reviewCount = parseInt(reviewCount);
-    }
-    reviewCount += 1;
+
+    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
+    reviewCount++;
+
+
     localStorage.setItem('reviewCount', reviewCount);
 
+    
     updateReviewCount();
 }
 
+window.onload = function () {
+    updateReviewCount();  
 
-if (window.location.pathname.includes("form.html")) {
-    const form = document.querySelector("form.review");
-    if (form) {
-        form.addEventListener("submit", function() {
-            incrementReviewCount();
-        });
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('review')) { 
+        incrementReviewCount();
     }
-}
+};
