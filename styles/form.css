@@ -72,6 +72,12 @@ form {
     min-height: 44px;
 }
 
+input[type="checkbox"] {
+    width: 2em;
+    height: 1rem;
+ 
+  }
+  
 
 
 .review input[type="text"], 
