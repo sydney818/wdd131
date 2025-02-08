@@ -45,39 +45,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function updateReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
+    // 1️⃣ Initialize the display element.
+    const reviewCountElement = document.getElementById("reviewCount");
 
-    if (!reviewCount) {
-        reviewCount = 0;
-    } else {
-        reviewCount = parseInt(reviewCount);
-    }
+    // 2️⃣ Get the stored review count from localStorage (default to 0 if not found).
+    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
 
-    const reviewCountElement = document.getElementById('reviewCount');
-    if (reviewCountElement) {
+    // 3️⃣ Check if reviewCount is greater than 0 (not first visit).
+    if (reviewCount !== 0) {
         reviewCountElement.textContent = `Total Reviews Submitted: ${reviewCount}`;
     } else {
-        console.error("Error: Element with id 'reviewCount' not found.");
+        reviewCountElement.textContent = `No reviews submitted yet. Be the first!`;
     }
 }
 
 function incrementReviewCount() {
-    let reviewCount = localStorage.getItem('reviewCount');
 
-    if (!reviewCount) {
-        reviewCount = 0;
-    } else {
-        reviewCount = parseInt(reviewCount);
-    }
+    let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
+    reviewCount++;
 
-    reviewCount += 1;
+
     localStorage.setItem('reviewCount', reviewCount);
 
+    
     updateReviewCount();
 }
 
 window.onload = function () {
-    updateReviewCount();
+    updateReviewCount();  
 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('review')) { 
