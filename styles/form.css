@@ -84,6 +84,10 @@ input[type=checkbox] {
     height: 20px;
     } 
 
+.required {
+    color: red; /* Makes the asterisk red */
+    font-weight: bold;
+    }
 
 .review input[type="text"], 
 .review textarea, 
