@@ -39,24 +39,12 @@ products.forEach(product => {
     selectElement.appendChild(option);
 });
 
-function updateReviewCount() {
-    const reviewDisplay = document.querySelector(".reviews");
 
-    if (!reviewDisplay) {
-        console.error("Element .reviews not found on this page.");
-        return;
-    }
+function incrementReviewCountOnSubmit() {
+    let reviewCount = localStorage.getItem('reviewCount');
+    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
 
-    let reviewCount = Number(window.localStorage.getItem("reviewCount-ls")) || 0;
+    reviewCount++;
 
-    if (reviewCount > 0) {
-        reviewDisplay.textContent = `Total Reviews Submitted: ${reviewCount}`;
-    } else {
-        reviewDisplay.textContent = "This is your first review!";
-    }
+    localStorage.setItem('reviewCount', reviewCount);
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Running updateReviewCount function.");
-    updateReviewCount();
-});

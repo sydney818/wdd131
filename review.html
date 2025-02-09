@@ -13,6 +13,21 @@
     <main>
         <p class="reviews">Loading review count...</p>
     </main>
-    <script src="scripts/form.js" defer></script>
+
+    <footer>
+        <p>&copy;<span id="currentyear"></span> Sydney Anderson, Utah 🌄</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        const today = new Date();
+        document.querySelector("#currentyear").textContent = today.getFullYear();
+        document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+
+        let reviewCount = localStorage.getItem('reviewCount');
+        reviewCount = reviewCount ? parseInt(reviewCount) : 0;
+
+        document.querySelector('.reviews').textContent = `Number of reviews completed: ${reviewCount}`;
+    </script>
 </body>
 </html>
