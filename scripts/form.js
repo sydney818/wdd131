@@ -3,13 +3,29 @@ const today = new Date();
 document.querySelector("#currentyear").textContent = today.getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
+function updateReviewCount() {
+    let reviewCount = localStorage.getItem('reviewCount');
+    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
+
+    // Update the review count on the page
+    const reviewsElement = document.querySelector('.reviews');
+    if (reviewsElement) {
+        reviewsElement.textContent = `Number of reviews completed: ${reviewCount}`;
+    } else {
+        console.error("Element .reviews not found on this page.");
+    }
+}
+
 function incrementReviewCountOnSubmit() {
     let reviewCount = localStorage.getItem('reviewCount');
     reviewCount = reviewCount ? parseInt(reviewCount) : 0;
     reviewCount += 1;
     localStorage.setItem('reviewCount', reviewCount);
-    console.log("Running updateReviewCount function."); // For debugging
-    return true; // Ensure the form can still submit
+    console.log("Running updateReviewCount function."); 
+
+    updateReviewCount();
+
+    return true; 
 }
 
 
