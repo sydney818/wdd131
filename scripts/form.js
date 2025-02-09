@@ -48,3 +48,13 @@ function incrementReviewCountOnSubmit() {
 
     localStorage.setItem('reviewCount', reviewCount);
 }
+
+if (window.location.pathname.includes("review.html")) {
+    let reviewCount = localStorage.getItem('reviewCount');
+    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
+
+    const reviewsElement = document.querySelector('.reviews');
+    if (reviewsElement) {
+        reviewsElement.textContent = `Number of reviews completed: ${reviewCount}`;
+    }
+}

@@ -27,7 +27,10 @@
         let reviewCount = localStorage.getItem('reviewCount');
         reviewCount = reviewCount ? parseInt(reviewCount) : 0;
 
-        document.querySelector('.reviews').textContent = `Number of reviews completed: ${reviewCount}`;
+        const reviewsElement = document.querySelector('.reviews');
+        if (reviewsElement) {
+            reviewsElement.textContent = `Number of reviews completed: ${reviewCount}`;
+        }
     </script>
 </body>
 </html>
