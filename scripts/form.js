@@ -3,6 +3,16 @@ const today = new Date();
 document.querySelector("#currentyear").textContent = today.getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
+function incrementReviewCountOnSubmit() {
+    let reviewCount = localStorage.getItem('reviewCount');
+    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
+    reviewCount += 1;
+    localStorage.setItem('reviewCount', reviewCount);
+    console.log("Running updateReviewCount function."); // For debugging
+    return true; // Ensure the form can still submit
+}
+
+
 const products = [
     {
         id: "fc-1888",
@@ -39,22 +49,3 @@ products.forEach(product => {
     selectElement.appendChild(option);
 });
 
-
-function incrementReviewCountOnSubmit() {
-    let reviewCount = localStorage.getItem('reviewCount');
-    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
-
-    reviewCount++;
-
-    localStorage.setItem('reviewCount', reviewCount);
-}
-
-if (window.location.pathname.includes("review.html")) {
-    let reviewCount = localStorage.getItem('reviewCount');
-    reviewCount = reviewCount ? parseInt(reviewCount) : 0;
-
-    const reviewsElement = document.querySelector('.reviews');
-    if (reviewsElement) {
-        reviewsElement.textContent = `Number of reviews completed: ${reviewCount}`;
-    }
-}
