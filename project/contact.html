@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 week06 creating my own website - UA Gutter Solutions.">
+    <meta name="author" content="Sydney Anderson">
+    <title>UA Gutter Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/contact.css">
+    <script src="scripts/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo_test.png" alt="UA Gutter Solutions Logo" class="logo">
+        <h1>Solutions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gutter.html">Gutter Info</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section-info">
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <p>We’d love to hear from you! Whether you have questions,
+                need a quote, or just want to chat, feel free to reach out. 
+                Use the form, send us an email, or give us a call—we’re happy to help!</p>
+                <p><strong>Phone:</strong> 801-888-1717</p>
+                <p><strong>Email: </strong>
+                    <a href="mailto:info@UAguttersolutions.com">info@UAguttersolutions.com</a>
+                </p>
+            </div>
+
+            <div class="review">
+                <h3>Leave a Review</h3>
+                <form id="reviewForm">
+                    <label for="reviewer">Name *</label>
+                    <input type="text" id="reviewer" required>
+            
+                    <label for="reviewText">Review *</label>
+                    <textarea id="reviewText" rows="4" required></textarea>
+            
+                    <input type="submit" value="Share Your Feedback">
+                </form>
+            </div>
+
+        </section>
+        <section class="section-contact">
+            <div class="container">
+                <h2>Get a free estimate</h2>
+                <form method="get" action="update.html" class="contact">
+                    <div class="form-group">
+                        <label for="name">First Name *</label><br>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Last Name *</label><br>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone *</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    </div>
+
+                    <div class="form-group"></div>
+                        <label for="email">Email *</label><br>
+                        <input type="email" id="email" name="email"><br>
+                    
+
+                    <div class="details">
+                        <label for="message">Message (Optional)</label><br>
+                        <textarea id="message" name="message" rows="4" placeholder="Project details here.."></textarea>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> UA Gutter Solutions, Utah 🌄</p>
+        <p id="lastModified"></p>
+    </footer>
+    
+</body>
+</html>
