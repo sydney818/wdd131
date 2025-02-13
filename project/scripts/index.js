@@ -2,14 +2,13 @@ const today = new Date();
 document.querySelector("#currentyear").textContent = today.getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-// Contact form and reviews 
 document.addEventListener("DOMContentLoaded", function () {
-    //  Review Form Submission
+    // Handle Review Form Submission
     const reviewForm = document.getElementById("reviewForm");
 
     if (reviewForm) {
         reviewForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault();  // Prevent the form from submitting normally
 
             let reviewer = document.getElementById("reviewer").value.trim();
             let reviewText = document.getElementById("reviewText").value.trim();
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (reviews.length === 0) {
             reviewsContainer.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
         } else {
-            reviewsContainer.innerHTML = ""; // Clear existing reviews
+            reviewsContainer.innerHTML = ""; // Clear existing reviews before displaying new ones
             reviews.forEach(review => {
                 let reviewElement = document.createElement("div");
                 reviewElement.classList.add("review");
