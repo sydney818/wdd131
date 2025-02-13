@@ -86,14 +86,14 @@ h1 {
 
 /* contact us section  */
 
-.contact {
+.info {
     background-color: white;
-    padding: 20px ; /* Adjust padding for a tighter fit */
+    padding: 20px ; 
     border-radius: 16px;
     box-shadow: 8px 6px 12px rgba(0, 0, 0, 0.2);
-    max-width: 400px; /* Limit the width so it only wraps around the text */
-    margin: 0 auto; /* Center it horizontally */
-    text-align: left; /* Center the text inside */
+    max-width: 400px; 
+    margin: 0 auto; 
+    text-align: left; 
 }
 
 .section-info {
@@ -124,7 +124,7 @@ h1 {
 
 .review {
     background-color: white;
-    padding: 20px ; /* Adjust padding for a tighter fit */
+    padding: 20px ; 
     border-radius: 16px;
     box-shadow: 8px 6px 12px rgba(0, 0, 0, 0.2);
 }

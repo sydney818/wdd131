@@ -3,7 +3,7 @@ document.querySelector("#currentyear").textContent = today.getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Handle Review Form Submission
+    // Handle Review Form Submission on Contact Page
     const reviewForm = document.getElementById("reviewForm");
 
     if (reviewForm) {
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
             reviewForm.reset();
 
             alert("Thank you for your review!");
-            displayReviews();  // Refresh the displayed reviews
+            incrementReviewCountOnSubmit();
         });
     }
 
-    // Function to display reviews
+    // Function to display reviews on index.html
     function displayReviews() {
         const reviewsContainer = document.getElementById("reviewsContainer");
 
@@ -56,6 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Display reviews on page load
     displayReviews();
+
+    function incrementReviewCountOnSubmit() {
+
+        displayReviews();
+        return false;  
+    }
 });
+

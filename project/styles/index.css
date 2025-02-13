@@ -93,7 +93,7 @@ img {
 
 .review-section {
     background-color: white;
-    padding: 20px ; /* Adjust padding for a tighter fit */
+    padding: 20px ; 
     border-radius: 16px;
     box-shadow: 8px 6px 12px rgba(0, 0, 0, 0.2);
 }

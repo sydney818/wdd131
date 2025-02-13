@@ -27,7 +27,7 @@
     </header>
     <main>
         <section class="section-info">
-            <div class="contact">
+            <div class="info">
                 <h2>Contact Us</h2>
                 <p>We’d love to hear from you! Whether you have questions,
                 need a quote, or just want to chat, feel free to reach out. 
@@ -57,7 +57,7 @@
         <section class="section-contact">
             <div class="container">
                 <h2>Get a free estimate</h2>
-                <form method="get" action="update.html" class="contact">
+                <form id="reviewForm" class="review" onsubmit="return incrementReviewCountOnSubmit()">
                     <div class="form-group">
                         <label for="name">First Name *</label><br>
                         <input type="text" id="name" name="name" required>
