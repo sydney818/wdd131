@@ -1,14 +1,15 @@
-const today = new Date();
-document.querySelector("#currentyear").textContent = today.getFullYear();
-document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Handle Review Form Submission on Contact Page
+    
+    // Update the year and last modified info
+    const today = new Date();
+    document.querySelector("#currentyear").textContent = today.getFullYear();
+    document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
+
     const reviewForm = document.getElementById("reviewForm");
 
     if (reviewForm) {
         reviewForm.addEventListener("submit", function (event) {
-            event.preventDefault();  // Prevent the form from submitting normally
+            event.preventDefault();  
 
             let reviewer = document.getElementById("reviewer").value.trim();
             let reviewText = document.getElementById("reviewText").value.trim();
@@ -19,49 +20,76 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             let newReview = { name: reviewer, text: reviewText };
-            let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-            reviews.push(newReview);
-            localStorage.setItem("reviews", JSON.stringify(reviews));
+            // Save the most recent review to localStorage, overwriting any previous review
+            localStorage.setItem("mostRecentReview", JSON.stringify(newReview));
 
             // Clear form after submission
             reviewForm.reset();
 
             alert("Thank you for your review!");
-            incrementReviewCountOnSubmit();
+            displayReview();  
         });
     }
 
-    // Function to display reviews on index.html
-    function displayReviews() {
+    // Function to display the most recent review
+    function displayReview() {
         const reviewsContainer = document.getElementById("reviewsContainer");
+        let mostRecentReview = JSON.parse(localStorage.getItem("mostRecentReview"));
 
-        let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        if (mostRecentReview) {
+            reviewsContainer.innerHTML = ""; // Clear any existing reviews 
 
-        if (reviews.length === 0) {
-            reviewsContainer.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
+            let reviewElement = document.createElement("div");
+            reviewElement.classList.add("review");
+
+            reviewElement.innerHTML = `
+                <h4>${mostRecentReview.name}</h4>
+                <p>${mostRecentReview.text}</p>
+            `;
+
+            reviewsContainer.appendChild(reviewElement);
         } else {
-            reviewsContainer.innerHTML = ""; // Clear existing reviews before displaying new ones
-            reviews.forEach(review => {
-                let reviewElement = document.createElement("div");
-                reviewElement.classList.add("review");
-
-                reviewElement.innerHTML = `
-                    <h4>${review.name}</h4>
-                    <p>${review.text}</p>
-                `;
-
-                reviewsContainer.appendChild(reviewElement);
-            });
+            reviewsContainer.innerHTML = "<p>No reviews yet. Be the first to leave one!</p>";
         }
     }
 
-    displayReviews();
+    // Display the most recent review on page load
+    displayReview();
+});
 
-    function incrementReviewCountOnSubmit() {
+// Free quote section
+document.addEventListener("DOMContentLoaded", function () {
+    const estimateForm = document.getElementById("estimateForm");
 
-        displayReviews();
-        return false;  
+    if (estimateForm) {
+        estimateForm.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+
+            // Get form data
+            const firstName = document.getElementById("firstName").value.trim();
+            const lastName = document.getElementById("lastName").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Store form data in localStorage
+            const estimateData = {
+                firstName: firstName,
+                lastName: lastName,
+                phone: phone,
+                email: email,
+                message: message
+            };
+
+            localStorage.setItem("estimateData", JSON.stringify(estimateData));
+
+            alert("Estimate request saved! Thank you for your submission.");
+            estimateForm.reset(); 
+        });
     }
 });
+
+
+
 

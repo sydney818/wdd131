@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-image: linear-gradient(175deg, #EEE 50%, rgb(142, 8, 8) 50%, black);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+}
+
+/* LOGO */
+.logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* NAVIGATION */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: black;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: larger;
+    color: black;
+}
+
+nav a:hover {
+    color: rgb(142, 8, 8);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.grid {
+    grid-template-columns: 1fr; 
+}
+
+.gutter-options h2 {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.gutter-image img {
+    border-radius: 16px;
+}
+
+.gutter-content {
+    background-color: white;
+    display: inline-block; /* For future refrence helps background wrap around text */
+    width: fit-content; /* Adjusts width to fit the content */
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #333;
+    border-radius: 16px;
+}
+
+.gutter-option {
+    padding: 10px;
+}
+
+#testimonials-container {
+    background-color: white;
+    padding: 20px;
+    display: inline-block; 
+    width: fit-content;
+    align-items: right;
+    margin-left: 56%;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+}
+
+.testimonial {
+    border: 1px solid #ddd; 
+    padding: 15px;
+    margin-bottom: 15px; 
+    border-radius: 8px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.testimonial h3 {
+    font-size: 1.2rem;
+    color: #333; 
+    margin-bottom: 10px; 
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555; 
+    line-height: 1.5;
+    margin-bottom: 10px; 
+}
+
+.testimonial p:last-child {
+    font-weight: bold;
+    color: rgb(142, 8, 8); 
+}
+
+#filter-rating {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color:  black;
+    color: white;
+
+}
+
+
+/* Large Screen*/
+@media (min-width: 768px) {
+    
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px; 
+    }
+
+    .logo {
+        height: 100px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+
+    }
+
+    nav {
+        flex:1 1 auto;
+    }
+
+    nav ul {
+        display: flex; 
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    .gutter-options {
+        display: flex;
+        flex-direction: column;
+        gap: 30px; 
+    }
+    
+   
+    .gutter-option {
+        display: flex;
+        align-items: flex-start; 
+        gap: 20px; 
+    }
+    
+    .gutter-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+        
+
+}
