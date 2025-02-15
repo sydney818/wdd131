@@ -170,7 +170,7 @@ nav li {
 
 @media (max-width: 768px) {
     nav {
-        display: none; /* Hide the navigation by default */
+        display: none; 
         position: absolute;
         top: 60px;
         right: 0;
@@ -185,15 +185,13 @@ nav li {
     }
 
     nav.active {
-        display: block;  /* Show navigation when active */
+        display: block;  
     }
 
     .hamburger {
-        display: flex;  /* Show the hamburger button on small screens */
+        display: flex; 
     }
 }
-
-
 
 
 
