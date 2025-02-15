@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (reviewForm) {
         reviewForm.addEventListener("submit", function (event) {
-            event.preventDefault();  // Prevent form from submitting normally
+            event.preventDefault();  
 
             let reviewer = document.getElementById("reviewer").value.trim();
             let reviewText = document.getElementById("reviewText").value.trim();
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let newReview = { name: reviewer, text: reviewText };
 
-            // Save the most recent review to localStorage, overwriting any previous review
+            // Save the most recent review to localStorage, 
             localStorage.setItem("mostRecentReview", JSON.stringify(newReview));
 
             // Clear form after submission
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Function to display the most recent review
+    // display the most recent review
     function displayReview() {
         const reviewsContainer = document.getElementById("reviewsContainer");
         
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let mostRecentReview = JSON.parse(localStorage.getItem("mostRecentReview"));
 
         if (mostRecentReview) {
-            reviewsContainer.innerHTML = ""; // Clear any existing reviews before displaying the new one
+            reviewsContainer.innerHTML = ""; // Clear any existing reviews 
 
             let reviewElement = document.createElement("div");
             reviewElement.classList.add("review");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Display the most recent review on page load
+   
     displayReview();
 
     // Free quote section
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("estimateData", JSON.stringify(estimateData));
 
             alert("Estimate request saved! Thank you for your submission.");
-            estimateForm.reset(); // Reset form fields after submission
+            estimateForm.reset(); 
         });
     }
 
