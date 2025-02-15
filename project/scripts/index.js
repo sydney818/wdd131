@@ -1,3 +1,9 @@
+// Hamburger menu
+document.getElementById("hamburger-btn").addEventListener("click", function() {
+    const nav = document.querySelector("nav");
+    nav.classList.toggle("active");
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Update the year and last modified info
     const today = new Date();
@@ -96,11 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Hamburger menu
-document.getElementById("hamburger-btn").addEventListener("click", function() {
-        const nav = document.querySelector("nav");
-        nav.classList.toggle("active");
-});
+
 
 
 
