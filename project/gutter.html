@@ -24,7 +24,7 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <button class="hamburger" id="hamburger-btn">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -72,7 +72,8 @@
 
             <section id="testimonials-container">
                 <h2>Customer Testimonials</h2>
-                <select id="filter-rating">
+                <label for="filter-rating">Filter by Rating:</label>
+                <select id="filter-rating" aria-label="Filter testimonials by rating">
                     <option value="all">All</option>
                     <option value="5">5 Stars</option>
                     <option value="4">4 Stars</option>
