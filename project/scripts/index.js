@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
     // Update the year and last modified info
     const today = new Date();
     document.querySelector("#currentyear").textContent = today.getFullYear();
@@ -9,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (reviewForm) {
         reviewForm.addEventListener("submit", function (event) {
-            event.preventDefault();  
+            event.preventDefault();  // Prevent form from submitting normally
 
             let reviewer = document.getElementById("reviewer").value.trim();
             let reviewText = document.getElementById("reviewText").value.trim();
@@ -28,17 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
             reviewForm.reset();
 
             alert("Thank you for your review!");
-            displayReview();  
+            displayReview();  // Refresh the displayed review
         });
     }
 
     // Function to display the most recent review
     function displayReview() {
         const reviewsContainer = document.getElementById("reviewsContainer");
+        
+        if (!reviewsContainer) {
+            console.error("reviewsContainer element not found!");
+            return;
+        }
+
         let mostRecentReview = JSON.parse(localStorage.getItem("mostRecentReview"));
 
         if (mostRecentReview) {
-            reviewsContainer.innerHTML = ""; // Clear any existing reviews 
+            reviewsContainer.innerHTML = ""; // Clear any existing reviews before displaying the new one
 
             let reviewElement = document.createElement("div");
             reviewElement.classList.add("review");
@@ -56,15 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Display the most recent review on page load
     displayReview();
-});
 
-// Free quote section
-document.addEventListener("DOMContentLoaded", function () {
+    // Free quote section
     const estimateForm = document.getElementById("estimateForm");
 
     if (estimateForm) {
         estimateForm.addEventListener("submit", function (event) {
-            event.preventDefault(); 
+            event.preventDefault(); // Prevent form submission
 
             // Get form data
             const firstName = document.getElementById("firstName").value.trim();
@@ -85,11 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("estimateData", JSON.stringify(estimateData));
 
             alert("Estimate request saved! Thank you for your submission.");
-            estimateForm.reset(); 
+            estimateForm.reset(); // Reset form fields after submission
         });
     }
 });
-
 
 
 
